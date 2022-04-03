@@ -17,19 +17,18 @@ void setup() {
     pinMode(LASER_PIN, OUTPUT);
     digitalWrite(LASER_PIN, HIGH);
     Serial.begin(9600);
-    Serial.println("Measurements are in milliseconds.");
 }
 
 void loop() {
     sensorValue = analogRead(SENSOR_PIN);
 
     if (!isHigh && sensorValue - 200 > lowValue) {
-        startTime = millis();
+        startTime = micros();
         isHigh = true;
     }
     else if (isHigh && sensorValue - 200 < lowValue) {
         isHigh = false;
-        endTime = millis();
+        endTime = micros();
         measurement = endTime - startTime;
         Serial.println(measurement);
     }
