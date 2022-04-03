@@ -1,12 +1,12 @@
 // You may override this if you connected  the photoresistor 
 // to a different analog input pin.
-const int SENSOR_PIN = A7;
+const unsigned short SENSOR_PIN = A7;
 // You may override this if you connected the laser 
 // to a different digital output pin.
-const int LASER_PIN = 2;
+const unsigned short LASER_PIN = 2;
 
-int sensorValue = 0;
-int lowValue = 0;
+unsigned int sensorValue = 0;
+unsigned int lowValue = 0;
 bool isHigh = false;
 unsigned long startTime = 0;
 unsigned long endTime = 0;
